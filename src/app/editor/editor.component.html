@@ -9,14 +9,7 @@
         <mat-form-field class="full-width">
           <mat-label>Name</mat-label>
           <input matInput formControlName="name" />
-          <mat-error
-            *ngIf="
-              form.get('name')?.hasError('required') &&
-              form.get('name')?.touched
-            "
-          >
-            This field is required.
-          </mat-error>
+          <app-required [form]="form" [prop]="'name'"></app-required>
         </mat-form-field>
         <h2>Title</h2>
         <mat-form-field class="full-width">
@@ -35,53 +28,25 @@
         <mat-form-field class="full-width">
           <mat-label>TLDR</mat-label>
           <input matInput formControlName="tldr" />
-          <mat-error
-            *ngIf="
-              form.get('tldr')?.hasError('required') &&
-              form.get('tldr')?.touched
-            "
-          >
-            This field is required.
-          </mat-error>
+          <app-required [form]="form" [prop]="'tldr'"></app-required>
         </mat-form-field>
         <h2>About me</h2>
         <mat-form-field class="full-width">
           <mat-label>About me</mat-label>
           <textarea matInput formControlName="aboutMe"></textarea>
-          <mat-error
-            *ngIf="
-              form.get('aboutMe')?.hasError('required') &&
-              form.get('aboutMe')?.touched
-            "
-          >
-            This field is required.
-          </mat-error>
+          <app-required [form]="form" [prop]="'aboutMe'"></app-required>
         </mat-form-field>
         <h2>Image</h2>
         <mat-form-field class="full-width">
           <mat-label>Image</mat-label>
           <input matInput formControlName="image" />
-          <mat-error
-            *ngIf="
-              form.get('image')?.hasError('required') &&
-              form.get('image')?.touched
-            "
-          >
-            This field is required.
-          </mat-error>
+          <app-required [form]="form" [prop]="'image'"></app-required>
         </mat-form-field>
         <h2>Job Status</h2>
         <mat-form-field class="full-width">
           <mat-label>Job Status</mat-label>
           <input matInput formControlName="jobStatus" />
-          <mat-error
-            *ngIf="
-              form.get('jobStatus')?.hasError('required') &&
-              form.get('jobStatus')?.touched
-            "
-          >
-            This field is required.
-          </mat-error>
+          <app-required [form]="form" [prop]="'jobStatus'"></app-required>
         </mat-form-field>
         <h2>Hobbies</h2>
         <button
@@ -174,27 +139,13 @@
         <mat-form-field class="full-width">
           <mat-label>Resume</mat-label>
           <input matInput formControlName="resume" />
-          <mat-error
-            *ngIf="
-              form.get('resume')?.hasError('required') &&
-              form.get('resume')?.touched
-            "
-          >
-            This field is required.
-          </mat-error>
+          <app-required [form]="form" [prop]="'resume'"></app-required>
         </mat-form-field>
         <h2>Transcript</h2>
         <mat-form-field class="full-width">
           <mat-label>Transcript</mat-label>
           <input matInput formControlName="transcript" />
-          <mat-error
-            *ngIf="
-              form.get('transcript')?.hasError('required') &&
-              form.get('transcript')?.touched
-            "
-          >
-            This field is required.
-          </mat-error>
+          <app-required [form]="form" [prop]="'transcript'"></app-required>
         </mat-form-field>
         <button mat-button (click)="deleteForm(bioForm, i)">Delete Form</button>
       </mat-expansion-panel>
@@ -213,40 +164,19 @@
         <mat-form-field class="full-width">
           <mat-label>Title</mat-label>
           <input matInput formControlName="title" />
-          <mat-error
-            *ngIf="
-              form.get('title')?.hasError('required') &&
-              form.get('title')?.touched
-            "
-          >
-            This field is required.
-          </mat-error>
+          <app-required [form]="form" [prop]="'title'"></app-required>
         </mat-form-field>
         <h2>Value</h2>
         <mat-form-field class="full-width">
           <mat-label>Value</mat-label>
           <input matInput formControlName="value" />
-          <mat-error
-            *ngIf="
-              form.get('value')?.hasError('required') &&
-              form.get('value')?.touched
-            "
-          >
-            This field is required.
-          </mat-error>
+          <app-required [form]="form" [prop]="'value'"></app-required>
         </mat-form-field>
         <h2>Description</h2>
         <mat-form-field class="full-width">
           <mat-label>Description</mat-label>
           <input matInput formControlName="description" />
-          <mat-error
-            *ngIf="
-              form.get('description')?.hasError('required') &&
-              form.get('description')?.touched
-            "
-          >
-            This field is required.
-          </mat-error>
+          <app-required [form]="form" [prop]="'description'"></app-required>
         </mat-form-field>
         <button mat-button (click)="deleteForm(statsForm, i)">Delete</button>
       </mat-expansion-panel>
@@ -254,7 +184,7 @@
     <button mat-button (click)="addForm(statsForm)">Add Another Form</button>
   </mat-step>
 
-  <!-- Step 3 -->
+  <!-- Experience -->
   <mat-step [stepControl]="experienceForm[0]">
     <form *ngFor="let form of experienceForm; let i = index" [formGroup]="form">
       <ng-template matStepLabel>Experience Form</ng-template>
@@ -264,40 +194,19 @@
         <mat-form-field class="full-width">
           <mat-label>Title</mat-label>
           <input matInput formControlName="title" />
-          <mat-error
-            *ngIf="
-              form.get('title')?.hasError('required') &&
-              form.get('title')?.touched
-            "
-          >
-            This field is required.
-          </mat-error>
+          <app-required [form]="form" [prop]="'title'"></app-required>
         </mat-form-field>
         <h2>Summary</h2>
         <mat-form-field class="full-width">
           <mat-label>Summary</mat-label>
           <input matInput formControlName="summary" />
-          <mat-error
-            *ngIf="
-              form.get('summary')?.hasError('required') &&
-              form.get('summary')?.touched
-            "
-          >
-            This field is required.
-          </mat-error>
+          <app-required [form]="form" [prop]="'summary'"></app-required>
         </mat-form-field>
         <h2>Story</h2>
         <mat-form-field class="full-width">
           <mat-label>Story</mat-label>
           <textarea matInput formControlName="story"></textarea>
-          <mat-error
-            *ngIf="
-              form.get('story')?.hasError('required') &&
-              form.get('story')?.touched
-            "
-          >
-            This field is required.
-          </mat-error>
+          <app-required [form]="form" [prop]="'story'"></app-required>
         </mat-form-field>
         <h2>Skills</h2>
         <button
@@ -385,27 +294,13 @@
         <mat-form-field class="full-width">
           <mat-label>Org Name</mat-label>
           <input matInput formControlName="orgName" />
-          <mat-error
-            *ngIf="
-              form.get('orgName')?.hasError('required') &&
-              form.get('orgName')?.touched
-            "
-          >
-            This field is required.
-          </mat-error>
+          <app-required [form]="form" [prop]="'orgName'"></app-required>
         </mat-form-field>
         <h2>Date start and end</h2>
         <mat-form-field class="full-width">
           <mat-label>Date start and end</mat-label>
           <input matInput formControlName="dateStartEnd" />
-          <mat-error
-            *ngIf="
-              form.get('dateStartEnd')?.hasError('required') &&
-              form.get('dateStartEnd')?.touched
-            "
-          >
-            This field is required.
-          </mat-error>
+          <app-required [form]="form" [prop]="'dateStartEnd'"></app-required>
         </mat-form-field>
         <h2>Current role?</h2>
         <mat-form-field class="full-width">

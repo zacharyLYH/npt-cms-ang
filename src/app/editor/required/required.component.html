@@ -1,0 +1,5 @@
+<mat-error
+  *ngIf="form?.get(prop!)?.hasError('required') && form?.get(prop!)?.touched"
+>
+  This field is required.
+</mat-error>
