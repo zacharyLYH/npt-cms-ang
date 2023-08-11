@@ -18,6 +18,12 @@
     <app-experience></app-experience>
   </mat-step>
 
+  <!-- Project -->
+  <mat-step [stepControl]="formActions.projectForm[0]">
+    <ng-template matStepLabel>Project Form</ng-template>
+    <app-project></app-project>
+  </mat-step>
+
   <!-- Submission Step -->
   <mat-step>
     <ng-template matStepLabel>Submit</ng-template>

@@ -1,0 +1,151 @@
+<div
+  *ngFor="let form of formActions.projectForm; let i = index"
+  [formGroup]="form"
+>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header> Project </mat-expansion-panel-header>
+    <h2>Name</h2>
+    <mat-form-field class="full-width">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+      <app-required [form]="form" [prop]="'name'"></app-required>
+    </mat-form-field>
+    <h2>Summary</h2>
+    <mat-form-field class="full-width">
+      <mat-label>Summary</mat-label>
+      <input matInput formControlName="summary" />
+      <app-required [form]="form" [prop]="'summary'"></app-required>
+    </mat-form-field>
+    <h2>Story</h2>
+    <mat-form-field class="full-width">
+      <mat-label>Story</mat-label>
+      <textarea matInput formControlName="story"></textarea>
+      <app-required [form]="form" [prop]="'story'"></app-required>
+    </mat-form-field>
+    <h2>Skills</h2>
+    <button
+      mat-button
+      class="add-button"
+      (click)="formActions.addSubField(form, 'skills')"
+    >
+      Add skill
+    </button>
+    <div formArrayName="skills">
+      <div
+        *ngFor="
+          let subField of formActions.getFormArray(form, 'skills').controls;
+          let j = index
+        "
+      >
+        <div class="social-link-container">
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              placeholder="HTML, React, ExpressJS..."
+              [formControl]="formActions.getFormControl(form, 'skills', j)"
+            />
+            <mat-error
+              *ngIf="
+                formActions
+                  .getFormControl(form, 'skills', j)
+                  .hasError('required') &&
+                formActions.getFormControl(form, 'skills', j).touched
+              "
+            >
+              This field is required.
+            </mat-error>
+          </mat-form-field>
+          <button
+            mat-button
+            (click)="formActions.removeSubField(form, 'skills', j)"
+          >
+            Remove
+          </button>
+        </div>
+      </div>
+    </div>
+    <h2>Links</h2>
+    <button
+      mat-button
+      class="add-button"
+      (click)="formActions.addSubField(form, 'links')"
+    >
+      Add Link
+    </button>
+    <div formArrayName="links">
+      <div
+        *ngFor="
+          let subField of formActions.getFormArray(form, 'links').controls;
+          let j = index
+        "
+      >
+        <div class="social-link-container">
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              placeholder="https://facebook.com"
+              [formControl]="formActions.getFormControl(form, 'links', j)"
+            />
+            <mat-error
+              *ngIf="
+                formActions
+                  .getFormControl(form, 'links', j)
+                  .hasError('required') &&
+                formActions.getFormControl(form, 'links', j).touched
+              "
+            >
+              This field is required.
+            </mat-error>
+            <mat-error
+              *ngIf="
+                formActions
+                  .getFormControl(form, 'links', j)
+                  .hasError('pattern') &&
+                formActions.getFormControl(form, 'links', j).touched
+              "
+            >
+              Please enter a valid URL.
+            </mat-error>
+          </mat-form-field>
+          <button
+            mat-button
+            (click)="formActions.removeSubField(form, 'links', j)"
+          >
+            Remove
+          </button>
+        </div>
+      </div>
+    </div>
+    <h2>Date start and end</h2>
+    <mat-form-field class="full-width">
+      <mat-label>Date start and end</mat-label>
+      <input matInput formControlName="dateStartToEnd" />
+      <app-required [form]="form" [prop]="'dateStartToEnd'"></app-required>
+    </mat-form-field>
+    <h2>Current project?</h2>
+    <mat-form-field class="full-width">
+      <mat-label>Current project?</mat-label>
+      <mat-select formControlName="current">
+        <mat-option [value]="true">Yes</mat-option>
+        <mat-option [value]="false">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <h2>Featured project?</h2>
+    <mat-form-field class="full-width">
+      <mat-label>Featured project?</mat-label>
+      <mat-select formControlName="featured">
+        <mat-option [value]="true">Yes</mat-option>
+        <mat-option [value]="false">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button
+      mat-button
+      (click)="formActions.deleteForm(formActions.projectForm, i)"
+    >
+      Delete
+    </button>
+  </mat-expansion-panel>
+</div>
+<button mat-button (click)="formActions.addForm(formActions.projectForm)">
+  Add Another Form
+</button>

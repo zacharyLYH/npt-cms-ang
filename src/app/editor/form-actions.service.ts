@@ -14,6 +14,7 @@ export class FormActionsService {
   bioForm: FormGroup[] = [];
   statsForm: FormGroup[] = [];
   experienceForm: FormGroup[] = [];
+  projectForm: FormGroup[] = [];
 
   constructor(private _formBuilder: FormBuilder) {}
 
@@ -50,7 +51,7 @@ export class FormActionsService {
     } else if (stepForms === this.experienceForm) {
       stepForms.push(
         this._formBuilder.group({
-          isMember: [false],
+          current: [false],
           summary: ['', Validators.required],
           title: ['', Validators.required],
           story: ['', Validators.required],
@@ -62,6 +63,23 @@ export class FormActionsService {
             Validators.pattern(this.urlPattern)
           ),
           type: 'Experience',
+        })
+      );
+    } else if (stepForms === this.projectForm) {
+      stepForms.push(
+        this._formBuilder.group({
+          name: [false],
+          current: [false],
+          featured: [false],
+          summary: ['', Validators.required],
+          story: ['', Validators.required],
+          dateStartEnd: [''],
+          skills: this._formBuilder.array([], Validators.required),
+          links: this._formBuilder.array(
+            [],
+            Validators.pattern(this.urlPattern)
+          ),
+          type: 'Project',
         })
       );
     }
@@ -103,9 +121,12 @@ export class FormActionsService {
   }
 
   allFormsAreValid(): boolean {
-    return [...this.bioForm, ...this.statsForm, ...this.experienceForm].every(
-      (form) => form.valid
-    );
+    return [
+      ...this.bioForm,
+      ...this.statsForm,
+      ...this.experienceForm,
+      ...this.projectForm,
+    ].every((form) => form.valid);
   }
 
   submit(): void {
@@ -113,6 +134,7 @@ export class FormActionsService {
       bioForm: this.bioForm.map((form) => form.value),
       statsForm: this.statsForm.map((form) => form.value),
       experienceForm: this.experienceForm.map((form) => form.value),
+      projectForm: this.projectForm.map((form) => form.value),
     });
   }
 }
