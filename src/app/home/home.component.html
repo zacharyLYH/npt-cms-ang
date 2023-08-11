@@ -1,0 +1,32 @@
+<div class="container-box">
+  <input
+    type="file"
+    class="file-input"
+    [accept]="'.json'"
+    (change)="onFileSelected($event)"
+    #fileUpload
+  />
+  <div class="file-upload">
+    {{ fileName || "No file uploaded yet." }}
+    <mat-icon class="cancel-upload" *ngIf="fileName" (click)="cancelUpload()"
+      >delete_forever</mat-icon
+    >
+    <button
+      mat-mini-fab
+      color="primary"
+      class="upload-btn"
+      (click)="fileUpload.click()"
+    >
+      <mat-icon>attach_file</mat-icon>
+    </button>
+  </div>
+</div>
+<div class="or-section container-box light">
+  <div class="or-border"></div>
+  <div class="or-text">OR</div>
+  <div class="or-border"></div>
+</div>
+<a class="generate-btn" href="/edit">Generate a new template</a>
+<div class="progress">
+  <mat-progress-bar class="progress-bar" mode="determinate"></mat-progress-bar>
+</div>

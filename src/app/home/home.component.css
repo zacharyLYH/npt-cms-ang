@@ -1,0 +1,63 @@
+.file-input {
+  display: none;
+}
+
+.file-upload {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.upload-btn {
+  margin-left: 10px;
+  padding: 5px 15px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.container-box {
+  border: 1px solid #d1d1d1;
+  background-color: #f8f9fa;
+  display: inline-block;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.container-box.light {
+  background-color: #ffffff;
+}
+
+.or-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 10px 0;
+}
+
+.or-border {
+  flex: 1;
+  height: 1px;
+  background-color: #d1d1d1;
+}
+
+.or-text {
+  margin: 0 10px;
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.generate-btn {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.generate-btn:hover {
+  text-decoration: underline;
+}
