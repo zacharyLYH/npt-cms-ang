@@ -1,0 +1,75 @@
+<div
+  *ngFor="let form of formActions.footerForm; let i = index"
+  [formGroup]="form"
+>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header> Bio </mat-expansion-panel-header>
+    <h2>Author</h2>
+    <mat-form-field class="full-width">
+      <mat-label>Author</mat-label>
+      <input matInput formControlName="author" />
+      <app-required [form]="form" [prop]="'author'"></app-required>
+    </mat-form-field>
+    <h2>Links</h2>
+    <button
+      mat-button
+      class="add-button"
+      (click)="formActions.addSubField(form, 'links')"
+    >
+      Add Link
+    </button>
+    <div formArrayName="links">
+      <div
+        *ngFor="
+          let subField of formActions.getFormArray(form, 'links').controls;
+          let j = index
+        "
+      >
+        <div class="social-link-container">
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              placeholder="https://facebook.com"
+              [formControl]="formActions.getFormControl(form, 'links', j)"
+            />
+            <mat-error
+              *ngIf="
+                formActions
+                  .getFormControl(form, 'links', j)
+                  .hasError('required') &&
+                formActions.getFormControl(form, 'links', j).touched
+              "
+            >
+              This field is required.
+            </mat-error>
+            <mat-error
+              *ngIf="
+                formActions
+                  .getFormControl(form, 'links', j)
+                  .hasError('pattern') &&
+                formActions.getFormControl(form, 'links', j).touched
+              "
+            >
+              Please enter a valid URL.
+            </mat-error>
+          </mat-form-field>
+          <button
+            mat-button
+            (click)="formActions.removeSubField(form, 'links', j)"
+          >
+            Remove
+          </button>
+        </div>
+      </div>
+    </div>
+    <button
+      mat-button
+      (click)="formActions.deleteForm(formActions.footerForm, i)"
+    >
+      Delete Form
+    </button>
+  </mat-expansion-panel>
+</div>
+<button mat-button (click)="formActions.addForm(formActions.footerForm)">
+  Add Another Form
+</button>

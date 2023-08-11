@@ -31,6 +31,12 @@
     <app-commendation></app-commendation>
   </mat-step>
 
+  <!-- Footer -->
+  <mat-step [stepControl]="formActions.footerForm[0]">
+    <ng-template matStepLabel>Footer Form</ng-template>
+    <app-footer></app-footer>
+  </mat-step>
+
   <!-- Submission Step -->
   <mat-step>
     <ng-template matStepLabel>Submit</ng-template>

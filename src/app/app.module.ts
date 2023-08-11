@@ -21,9 +21,10 @@ import { StatsComponent } from './editor/stats/stats.component';
 import { ExperienceComponent } from './editor/experience/experience.component';
 import { ProjectComponent } from './editor/project/project.component';
 import { CommendationComponent } from './editor/commendation/commendation.component';
+import { FooterComponent } from './editor/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, EditorComponent, HomeComponent, RequiredComponent, BioComponent, StatsComponent, ExperienceComponent, ProjectComponent, CommendationComponent],
+  declarations: [AppComponent, EditorComponent, HomeComponent, RequiredComponent, BioComponent, StatsComponent, ExperienceComponent, ProjectComponent, CommendationComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

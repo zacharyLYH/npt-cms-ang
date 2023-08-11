@@ -16,6 +16,7 @@ export class FormActionsService {
   experienceForm: FormGroup[] = [];
   projectForm: FormGroup[] = [];
   commendationForm: FormGroup[] = [];
+  footerForm: FormGroup[] = [];
 
   constructor(private _formBuilder: FormBuilder) {}
 
@@ -94,6 +95,17 @@ export class FormActionsService {
           type: 'Commendation',
         })
       );
+    } else if (stepForms === this.footerForm) {
+      stepForms.push(
+        this._formBuilder.group({
+          author: ['', Validators.required],
+          links: this._formBuilder.array(
+            [],
+            Validators.pattern(this.urlPattern)
+          ),
+          type: 'Footer',
+        })
+      );
     }
   }
 
@@ -138,16 +150,26 @@ export class FormActionsService {
       ...this.statsForm,
       ...this.experienceForm,
       ...this.projectForm,
+      ...this.commendationForm,
+      ...this.footerForm,
     ].every((form) => form.valid);
   }
 
   submit(): void {
-    console.log({
-      bioForm: this.bioForm.map((form) => form.value),
-      statsForm: this.statsForm.map((form) => form.value),
-      experienceForm: this.experienceForm.map((form) => form.value),
-      projectForm: this.projectForm.map((form) => form.value),
-      commmendationForm: this.commendationForm.map((form) => form.value),
-    });
+    const serializedArray = JSON.stringify([
+      ...this.bioForm.map((formGroup) => formGroup.value),
+      ...this.statsForm.map((formGroup) => formGroup.value),
+      ...this.experienceForm.map((formGroup) => formGroup.value),
+      ...this.projectForm.map((formGroup) => formGroup.value),
+      ...this.commendationForm.map((formGroup) => formGroup.value),
+      ...this.footerForm.map((formGroup) => formGroup.value),
+    ]);
+    const blob = new Blob([serializedArray], { type: 'application/json' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Renderfile.json';
+    a.click();
+    window.URL.revokeObjectURL(url);
   }
 }
