@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.css'],
 })
-export class ExperienceComponent {
+export class ExperienceComponent implements OnInit {
   constructor(
     private _formBuilder: FormBuilder,
     private contentStorage: ContentStorageService,
