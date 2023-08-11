@@ -7,7 +7,5 @@ import { FormActionsService } from './form-actions.service';
   styleUrls: ['./editor.component.css'],
 })
 export class EditorComponent {
-  isLinear = false;
-
   constructor(public formActions: FormActionsService) {}
 }
