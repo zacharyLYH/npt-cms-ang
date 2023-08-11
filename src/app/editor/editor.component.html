@@ -25,6 +25,12 @@
     <app-project></app-project>
   </mat-step>
 
+  <!-- Commendation -->
+  <mat-step [stepControl]="formActions.commendationForm[0]">
+    <ng-template matStepLabel>Commendation Form</ng-template>
+    <app-commendation></app-commendation>
+  </mat-step>
+
   <!-- Submission Step -->
   <mat-step>
     <ng-template matStepLabel>Submit</ng-template>

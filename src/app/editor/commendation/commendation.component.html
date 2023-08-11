@@ -1,0 +1,46 @@
+<div
+  *ngFor="let form of formActions.commendationForm; let i = index"
+  [formGroup]="form"
+>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header> Commendation </mat-expansion-panel-header>
+    <h2>Name</h2>
+    <mat-form-field class="full-width">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+      <app-required [form]="form" [prop]="'name'"></app-required>
+    </mat-form-field>
+    <h2>Compliment</h2>
+    <mat-form-field class="full-width">
+      <mat-label>Compliment</mat-label>
+      <textarea matInput formControlName="compliment"></textarea>
+      <app-required [form]="form" [prop]="'compliment'"></app-required>
+    </mat-form-field>
+    <h2>Image</h2>
+    <mat-form-field class="full-width">
+      <mat-label>Image</mat-label>
+      <input matInput formControlName="image" />
+    </mat-form-field>
+    <h2>Credentials</h2>
+    <mat-form-field class="full-width">
+      <mat-label>Credentials</mat-label>
+      <input matInput formControlName="credentials" />
+      <app-required [form]="form" [prop]="'credentials'"></app-required>
+    </mat-form-field>
+    <h2>Link</h2>
+    <mat-form-field class="full-width">
+      <mat-label>Link</mat-label>
+      <input matInput formControlName="link" />
+      <app-required [form]="form" [prop]="'link'"></app-required>
+    </mat-form-field>
+    <button
+      mat-button
+      (click)="formActions.deleteForm(formActions.commendationForm, i)"
+    >
+      Delete
+    </button>
+  </mat-expansion-panel>
+</div>
+<button mat-button (click)="formActions.addForm(formActions.commendationForm)">
+  Add Another Form
+</button>

@@ -15,6 +15,7 @@ export class FormActionsService {
   statsForm: FormGroup[] = [];
   experienceForm: FormGroup[] = [];
   projectForm: FormGroup[] = [];
+  commendationForm: FormGroup[] = [];
 
   constructor(private _formBuilder: FormBuilder) {}
 
@@ -68,7 +69,7 @@ export class FormActionsService {
     } else if (stepForms === this.projectForm) {
       stepForms.push(
         this._formBuilder.group({
-          name: [false],
+          name: [''],
           current: [false],
           featured: [false],
           summary: ['', Validators.required],
@@ -80,6 +81,17 @@ export class FormActionsService {
             Validators.pattern(this.urlPattern)
           ),
           type: 'Project',
+        })
+      );
+    } else if (stepForms === this.commendationForm) {
+      stepForms.push(
+        this._formBuilder.group({
+          name: [''],
+          compliment: ['', Validators.required],
+          image: [''],
+          credentials: ['', Validators.required],
+          link: ['', Validators.pattern(this.urlPattern)],
+          type: 'Commendation',
         })
       );
     }
@@ -135,6 +147,7 @@ export class FormActionsService {
       statsForm: this.statsForm.map((form) => form.value),
       experienceForm: this.experienceForm.map((form) => form.value),
       projectForm: this.projectForm.map((form) => form.value),
+      commmendationForm: this.commendationForm.map((form) => form.value),
     });
   }
 }
