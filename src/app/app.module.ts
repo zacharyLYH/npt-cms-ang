@@ -16,9 +16,12 @@ import { HomeComponent } from './home/home.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { RequiredComponent } from './editor/required/required.component';
+import { BioComponent } from './editor/bio/bio.component';
+import { StatsComponent } from './editor/stats/stats.component';
+import { ExperienceComponent } from './editor/experience/experience.component';
 
 @NgModule({
-  declarations: [AppComponent, EditorComponent, HomeComponent, RequiredComponent],
+  declarations: [AppComponent, EditorComponent, HomeComponent, RequiredComponent, BioComponent, StatsComponent, ExperienceComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

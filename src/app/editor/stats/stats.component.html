@@ -1,0 +1,35 @@
+<div
+  *ngFor="let form of formActions.statsForm; let i = index"
+  [formGroup]="form"
+>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header> Stats </mat-expansion-panel-header>
+    <h2>Title</h2>
+    <mat-form-field class="full-width">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" />
+      <app-required [form]="form" [prop]="'title'"></app-required>
+    </mat-form-field>
+    <h2>Value</h2>
+    <mat-form-field class="full-width">
+      <mat-label>Value</mat-label>
+      <input matInput formControlName="value" />
+      <app-required [form]="form" [prop]="'value'"></app-required>
+    </mat-form-field>
+    <h2>Description</h2>
+    <mat-form-field class="full-width">
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="description" />
+      <app-required [form]="form" [prop]="'description'"></app-required>
+    </mat-form-field>
+    <button
+      mat-button
+      (click)="formActions.deleteForm(formActions.statsForm, i)"
+    >
+      Delete
+    </button>
+  </mat-expansion-panel>
+</div>
+<button mat-button (click)="formActions.addForm(formActions.statsForm)">
+  Add Another Form
+</button>
