@@ -3,17 +3,30 @@
 }
 
 .file-upload {
+  display: flex;
+  align-items: center;
   margin-top: 10px;
   font-size: 18px;
 }
 
 .upload-btn {
   margin-left: 10px;
-  padding: 5px 15px;
+  padding: 0; /* Remove padding */
+  width: 35px; /* Set a fixed width for the circular button */
+  height: 35px; /* Set the same height as the width for a circle */
   background-color: #007bff;
   border: none;
   color: white;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Make it circular */
+  overflow: hidden; /* Hide any overflow content */
+}
+
+.upload-btn mat-icon {
+  margin: 0; /* Remove margin to center the icon */
 }
 
 .container-box {

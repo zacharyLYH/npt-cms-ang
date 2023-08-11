@@ -1,17 +1,27 @@
+.wrapper {
+  min-height: 100vh; /* Make sure the wrapper takes up at least the viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
 .hero {
+  flex: 1; /* Allow the hero section to grow and take remaining space */
   text-align: center;
   padding: 100px 0;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa;
 }
 
 .hero-text {
   font-size: 32px;
   margin-bottom: 20px;
-}
-
-.footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #f8f9fa;
 }
 
 .footer-text-muted {
