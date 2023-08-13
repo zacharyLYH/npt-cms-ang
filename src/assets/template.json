@@ -1,0 +1,56 @@
+[
+  {
+    "type": "Bio",
+    "name": "",
+    "title": "",
+    "socialLinks": [],
+    "tldr": "",
+    "aboutMe": "",
+    "image": "",
+    "hobbies": [],
+    "jobStatus": "",
+    "resume": "",
+    "transcript": ""
+  },
+  {
+    "type": "Experience",
+    "title": "",
+    "summary": "",
+    "skills": [],
+    "story": "",
+    "orgName": "",
+    "links": [],
+    "dateStartEnd": "",
+    "current": false
+  },
+  {
+    "type": "Project",
+    "name": "",
+    "summary": "",
+    "skills": [],
+    "story": "",
+    "links": [""],
+    "current": true,
+    "featured": true,
+    "dateStartToEnd": ""
+  },
+  {
+    "type": "Commendation",
+    "name": "",
+    "compliment": "",
+    "credentials": "",
+    "image": "",
+    "link": ""
+  },
+  {
+    "type": "Stats",
+    "title": "",
+    "value": "",
+    "description": ""
+  },
+  {
+    "type": "Footer",
+    "author": "",
+    "links": [""]
+  }
+]
