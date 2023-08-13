@@ -22,9 +22,21 @@ import { ExperienceComponent } from './editor/experience/experience.component';
 import { ProjectComponent } from './editor/project/project.component';
 import { CommendationComponent } from './editor/commendation/commendation.component';
 import { FooterComponent } from './editor/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, EditorComponent, HomeComponent, RequiredComponent, BioComponent, StatsComponent, ExperienceComponent, ProjectComponent, CommendationComponent, FooterComponent],
+  declarations: [
+    AppComponent,
+    EditorComponent,
+    HomeComponent,
+    RequiredComponent,
+    BioComponent,
+    StatsComponent,
+    ExperienceComponent,
+    ProjectComponent,
+    CommendationComponent,
+    FooterComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -38,6 +50,7 @@ import { FooterComponent } from './editor/footer/footer.component';
     MatExpansionModule,
     MatSelectModule,
     MatInputModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

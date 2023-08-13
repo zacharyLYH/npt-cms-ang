@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DecoderService } from '../decoder.service';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,23 @@ import { Router } from '@angular/router';
 export class HomeComponent {
   fileName = '';
 
-  constructor(private decoderService: DecoderService, private router: Router) {}
+  constructor(
+    private decoderService: DecoderService,
+    private router: Router,
+    private http: HttpClient
+  ) {}
+
+  useTemplate() {
+    this.http.get<any[]>('/assets/template.json').subscribe({
+      next: (data) => {
+        this.decoderService.populate(data);
+        this.router.navigate(['/edit']);
+      },
+      error: (error) => {
+        console.error('Failed to load JSON file', error);
+      },
+    });
+  }
 
   cancelUpload() {
     document.querySelector('.progress')?.classList.remove('active');
