@@ -8,10 +8,6 @@ export interface Bio {
   image?: string;
   hobbies?: string[];
   jobStatus?: string;
-  docs?: Docs;
-}
-
-export interface Docs {
   resume?: string;
   transcript?: string;
 }

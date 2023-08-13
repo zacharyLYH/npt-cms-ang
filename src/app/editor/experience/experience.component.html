@@ -2,8 +2,12 @@
   *ngFor="let form of formActions.experienceForm; let i = index"
   [formGroup]="form"
 >
-  <mat-expansion-panel>
-    <mat-expansion-panel-header> Experience </mat-expansion-panel-header>
+  <mat-expansion-panel
+    [ngClass]="{ 'bg-white': i % 2 === 0, 'bg-gray': i % 2 !== 0 }"
+  >
+    <mat-expansion-panel-header>
+      {{ form.value.title }}
+    </mat-expansion-panel-header>
     <h2>Title*</h2>
     <mat-form-field class="full-width">
       <mat-label>Title</mat-label>

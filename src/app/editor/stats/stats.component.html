@@ -2,21 +2,25 @@
   *ngFor="let form of formActions.statsForm; let i = index"
   [formGroup]="form"
 >
-  <mat-expansion-panel>
-    <mat-expansion-panel-header> Stats </mat-expansion-panel-header>
-    <h2>Title</h2>
+  <mat-expansion-panel
+    [ngClass]="{ 'bg-white': i % 2 === 0, 'bg-gray': i % 2 !== 0 }"
+  >
+    <mat-expansion-panel-header>
+      {{ form.value.title }}
+    </mat-expansion-panel-header>
+    <h2>Title*</h2>
     <mat-form-field class="full-width">
       <mat-label>Title</mat-label>
       <input matInput formControlName="title" />
       <app-required [form]="form" [prop]="'title'"></app-required>
     </mat-form-field>
-    <h2>Value</h2>
+    <h2>Value*</h2>
     <mat-form-field class="full-width">
       <mat-label>Value</mat-label>
       <input matInput formControlName="value" />
       <app-required [form]="form" [prop]="'value'"></app-required>
     </mat-form-field>
-    <h2>Description</h2>
+    <h2>Description*</h2>
     <mat-form-field class="full-width">
       <mat-label>Description</mat-label>
       <input matInput formControlName="description" />

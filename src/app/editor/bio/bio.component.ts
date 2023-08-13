@@ -38,8 +38,8 @@ export class BioComponent implements OnInit {
         aboutMe: [data.aboutMe, Validators.required],
         image: [data.image, Validators.required],
         jobStatus: [data.jobStatus, Validators.required],
-        resume: [data.docs?.resume, Validators.required],
-        transcript: [data.docs?.transcript],
+        resume: [data.resume, Validators.required],
+        transcript: [data.transcript],
         type: 'Bio',
       });
       this.formActions.bioForm.push(formGroup);
