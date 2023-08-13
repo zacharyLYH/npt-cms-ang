@@ -6,6 +6,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +19,7 @@ export class FormActionsService {
   commendationForm: FormGroup[] = [];
   footerForm: FormGroup[] = [];
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder, private router: Router) {}
 
   urlPattern = '^(https?://.+)|(.+@gmail\\.com)$';
   addForm(stepForms: FormGroup[]): void {
@@ -183,5 +184,6 @@ export class FormActionsService {
     a.download = 'Renderfile.json';
     a.click();
     window.URL.revokeObjectURL(url);
+    this.router.navigate(['/']);
   }
 }
