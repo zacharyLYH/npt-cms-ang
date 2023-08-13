@@ -3,7 +3,7 @@
     [ngClass]="{ 'bg-white': i % 2 === 0, 'bg-gray': i % 2 !== 0 }"
   >
     <mat-expansion-panel-header
-      >{{ form.value.name }}
+      >{{ form.value.name ? form.value.name : "Add a bio" }}
     </mat-expansion-panel-header>
     <h2>Name*</h2>
     <mat-form-field class="full-width">
