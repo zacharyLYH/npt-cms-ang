@@ -4,25 +4,25 @@
 >
   <mat-expansion-panel>
     <mat-expansion-panel-header> Project </mat-expansion-panel-header>
-    <h2>Name</h2>
+    <h2>Name*</h2>
     <mat-form-field class="full-width">
       <mat-label>Name</mat-label>
       <input matInput formControlName="name" />
       <app-required [form]="form" [prop]="'name'"></app-required>
     </mat-form-field>
-    <h2>Summary</h2>
+    <h2>Summary*</h2>
     <mat-form-field class="full-width">
       <mat-label>Summary</mat-label>
       <input matInput formControlName="summary" />
       <app-required [form]="form" [prop]="'summary'"></app-required>
     </mat-form-field>
-    <h2>Story</h2>
+    <h2>Story*</h2>
     <mat-form-field class="full-width">
       <mat-label>Story</mat-label>
       <textarea matInput formControlName="story"></textarea>
       <app-required [form]="form" [prop]="'story'"></app-required>
     </mat-form-field>
-    <h2>Skills</h2>
+    <h2>Skills (Optional)</h2>
     <button
       mat-button
       class="add-button"
@@ -64,7 +64,7 @@
         </div>
       </div>
     </div>
-    <h2>Links</h2>
+    <h2>Links (Optional)</h2>
     <button
       mat-button
       class="add-button"
@@ -116,13 +116,13 @@
         </div>
       </div>
     </div>
-    <h2>Date start and end</h2>
+    <h2>Date start and end (Optional)</h2>
     <mat-form-field class="full-width">
       <mat-label>Date start and end</mat-label>
       <input matInput formControlName="dateStartToEnd" />
       <app-required [form]="form" [prop]="'dateStartToEnd'"></app-required>
     </mat-form-field>
-    <h2>Current project?</h2>
+    <h2>Current project?*</h2>
     <mat-form-field class="full-width">
       <mat-label>Current project?</mat-label>
       <mat-select formControlName="current">
@@ -130,7 +130,7 @@
         <mat-option [value]="false">No</mat-option>
       </mat-select>
     </mat-form-field>
-    <h2>Featured project?</h2>
+    <h2>Featured project?*</h2>
     <mat-form-field class="full-width">
       <mat-label>Featured project?</mat-label>
       <mat-select formControlName="featured">

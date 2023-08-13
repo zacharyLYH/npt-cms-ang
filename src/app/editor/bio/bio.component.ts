@@ -28,7 +28,7 @@ export class BioComponent implements OnInit {
         socialLinks: this._formBuilder.array(
           (data.socialLinks || []).map((link: string) =>
             this._formBuilder.control(link, [
-              Validators.required,
+              // Validators.required,
               Validators.pattern(this.formActions.urlPattern),
             ])
           )
@@ -39,7 +39,7 @@ export class BioComponent implements OnInit {
         image: [data.image, Validators.required],
         jobStatus: [data.jobStatus, Validators.required],
         resume: [data.docs?.resume, Validators.required],
-        transcript: [data.docs?.transcript, Validators.required],
+        transcript: [data.docs?.transcript],
         type: 'Bio',
       });
       this.formActions.bioForm.push(formGroup);

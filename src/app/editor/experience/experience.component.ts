@@ -21,18 +21,17 @@ export class ExperienceComponent implements OnInit {
         title: [data.title, Validators.required],
         summary: [data.summary, Validators.required],
         story: [data.story, Validators.required],
-        orgName: [data.orgName, Validators.required],
-        dateStartEnd: [data.dateStartEnd, Validators.required],
-        current: [data.current],
+        orgName: [data.orgName],
+        dateStartEnd: [data.dateStartEnd],
+        current: [data.current, Validators.required],
         skills: this._formBuilder.array(
           (data.skills || []).map((skill: string) =>
-            this._formBuilder.control(skill, Validators.required)
+            this._formBuilder.control(skill)
           )
         ),
         links: this._formBuilder.array(
           (data.links || []).map((link: string) =>
             this._formBuilder.control(link, [
-              Validators.required,
               Validators.pattern(this.formActions.urlPattern),
             ])
           )

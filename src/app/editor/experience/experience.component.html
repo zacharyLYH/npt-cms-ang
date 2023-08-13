@@ -4,25 +4,25 @@
 >
   <mat-expansion-panel>
     <mat-expansion-panel-header> Experience </mat-expansion-panel-header>
-    <h2>Title</h2>
+    <h2>Title*</h2>
     <mat-form-field class="full-width">
       <mat-label>Title</mat-label>
       <input matInput formControlName="title" />
       <app-required [form]="form" [prop]="'title'"></app-required>
     </mat-form-field>
-    <h2>Summary</h2>
+    <h2>Summary*</h2>
     <mat-form-field class="full-width">
       <mat-label>Summary</mat-label>
       <input matInput formControlName="summary" />
       <app-required [form]="form" [prop]="'summary'"></app-required>
     </mat-form-field>
-    <h2>Story</h2>
+    <h2>Story*</h2>
     <mat-form-field class="full-width">
       <mat-label>Story</mat-label>
       <textarea matInput formControlName="story"></textarea>
       <app-required [form]="form" [prop]="'story'"></app-required>
     </mat-form-field>
-    <h2>Skills</h2>
+    <h2>Skills (Optional)</h2>
     <button
       mat-button
       class="add-button"
@@ -64,7 +64,7 @@
         </div>
       </div>
     </div>
-    <h2>Links</h2>
+    <h2>Links (Optional)</h2>
     <button
       mat-button
       class="add-button"
@@ -116,19 +116,17 @@
         </div>
       </div>
     </div>
-    <h2>Org Name</h2>
+    <h2>Org Name (Optiona)</h2>
     <mat-form-field class="full-width">
       <mat-label>Org Name</mat-label>
       <input matInput formControlName="orgName" />
-      <app-required [form]="form" [prop]="'orgName'"></app-required>
     </mat-form-field>
-    <h2>Date start and end</h2>
+    <h2>Date start and end (Optional)</h2>
     <mat-form-field class="full-width">
       <mat-label>Date start and end</mat-label>
       <input matInput formControlName="dateStartEnd" />
-      <app-required [form]="form" [prop]="'dateStartEnd'"></app-required>
     </mat-form-field>
-    <h2>Current role?</h2>
+    <h2>Current role?*</h2>
     <mat-form-field class="full-width">
       <mat-label>Current role?</mat-label>
       <mat-select formControlName="current">

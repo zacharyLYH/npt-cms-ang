@@ -19,11 +19,11 @@ export class CommendationComponent implements OnInit {
     for (const data of this.contentStorage.commendationData!) {
       let formGroup: FormGroup = this._formBuilder.group({});
       formGroup = this._formBuilder.group({
-        name: [data.name, Validators.required],
+        name: [data.name],
         compliment: [data.compliment, Validators.required],
         image: [data.image],
         credentials: [data.credentials, Validators.required],
-        link: [data.link, Validators.required],
+        link: [data.link],
         type: 'Commendation',
       });
       this.formActions.commendationForm.push(formGroup);

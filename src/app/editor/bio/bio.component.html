@@ -1,49 +1,43 @@
 <div *ngFor="let form of formActions.bioForm; let i = index" [formGroup]="form">
   <mat-expansion-panel>
     <mat-expansion-panel-header> Bio </mat-expansion-panel-header>
-    <h2>Name</h2>
+    <h2>Name*</h2>
     <mat-form-field class="full-width">
       <mat-label>Name</mat-label>
       <input matInput formControlName="name" />
       <app-required [form]="form" [prop]="'name'"></app-required>
     </mat-form-field>
-    <h2>Title</h2>
+    <h2>Title*</h2>
     <mat-form-field class="full-width">
       <mat-label>Title</mat-label>
       <input matInput formControlName="title" />
-      <mat-error
-        *ngIf="
-          form.get('title')?.hasError('required') && form.get('title')?.touched
-        "
-      >
-        This field is required.
-      </mat-error>
+      <app-required [form]="form" [prop]="'title'"></app-required>
     </mat-form-field>
-    <h2>TLDR</h2>
+    <h2>TLDR*</h2>
     <mat-form-field class="full-width">
       <mat-label>TLDR</mat-label>
       <input matInput formControlName="tldr" />
       <app-required [form]="form" [prop]="'tldr'"></app-required>
     </mat-form-field>
-    <h2>About me</h2>
+    <h2>About me*</h2>
     <mat-form-field class="full-width">
       <mat-label>About me</mat-label>
       <textarea matInput formControlName="aboutMe"></textarea>
       <app-required [form]="form" [prop]="'aboutMe'"></app-required>
     </mat-form-field>
-    <h2>Image</h2>
+    <h2>Image* (/image_name.extension)</h2>
     <mat-form-field class="full-width">
       <mat-label>Image</mat-label>
       <input matInput formControlName="image" />
       <app-required [form]="form" [prop]="'image'"></app-required>
     </mat-form-field>
-    <h2>Job Status</h2>
+    <h2>Job Status*</h2>
     <mat-form-field class="full-width">
       <mat-label>Job Status</mat-label>
       <input matInput formControlName="jobStatus" />
       <app-required [form]="form" [prop]="'jobStatus'"></app-required>
     </mat-form-field>
-    <h2>Hobbies</h2>
+    <h2>Hobbies*</h2>
     <button
       mat-button
       class="add-button"
@@ -85,7 +79,7 @@
         </div>
       </div>
     </div>
-    <h2>Social Links</h2>
+    <h2>Social Links (Optional)</h2>
     <button
       mat-button
       class="add-button"
@@ -138,17 +132,16 @@
         </div>
       </div>
     </div>
-    <h2>Resume</h2>
+    <h2>Resume* (/resume_name.pdf)</h2>
     <mat-form-field class="full-width">
       <mat-label>Resume</mat-label>
       <input matInput formControlName="resume" />
       <app-required [form]="form" [prop]="'resume'"></app-required>
     </mat-form-field>
-    <h2>Transcript</h2>
+    <h2>Transcript (Optional) (/transcript_name.pdf)</h2>
     <mat-form-field class="full-width">
       <mat-label>Transcript</mat-label>
       <input matInput formControlName="transcript" />
-      <app-required [form]="form" [prop]="'transcript'"></app-required>
     </mat-form-field>
     <button mat-button (click)="formActions.deleteForm(formActions.bioForm, i)">
       Delete Form

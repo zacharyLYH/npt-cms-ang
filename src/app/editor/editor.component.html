@@ -1,5 +1,8 @@
 <mat-icon class="home-icon">home</mat-icon>
 <a class="home-link" href="/">Home</a>
+<p *ngIf="formActions.invalidForms().length > 0">
+  Issue in{{ formActions.invalidForms() }} form(s)!
+</p>
 <mat-horizontal-stepper [linear]="false">
   <!-- Bio -->
   <mat-step [stepControl]="formActions.bioForm[0]">

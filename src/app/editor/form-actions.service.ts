@@ -31,7 +31,7 @@ export class FormActionsService {
           aboutMe: ['', Validators.required],
           image: ['', Validators.required],
           resume: ['', Validators.required],
-          transcript: ['', Validators.required],
+          transcript: [''],
           jobStatus: ['', Validators.required],
           hobbies: this._formBuilder.array([], Validators.required),
           socialLinks: this._formBuilder.array(
@@ -57,9 +57,9 @@ export class FormActionsService {
           summary: ['', Validators.required],
           title: ['', Validators.required],
           story: ['', Validators.required],
-          orgName: ['', Validators.required],
+          orgName: [''],
           dateStartEnd: [''],
-          skills: this._formBuilder.array([], Validators.required),
+          skills: this._formBuilder.array([]),
           links: this._formBuilder.array(
             [],
             Validators.pattern(this.urlPattern)
@@ -70,13 +70,13 @@ export class FormActionsService {
     } else if (stepForms === this.projectForm) {
       stepForms.push(
         this._formBuilder.group({
-          name: [''],
+          name: ['', Validators.required],
           current: [false],
           featured: [false],
           summary: ['', Validators.required],
           story: ['', Validators.required],
           dateStartEnd: [''],
-          skills: this._formBuilder.array([], Validators.required),
+          skills: this._formBuilder.array([]),
           links: this._formBuilder.array(
             [],
             Validators.pattern(this.urlPattern)
@@ -144,15 +144,27 @@ export class FormActionsService {
     this.getFormArray(form, arrayName).removeAt(index);
   }
 
+  invalidForms(): string[] {
+    const allForms = [
+      { name: ' Bio', forms: this.bioForm },
+      { name: ' Stats', forms: this.statsForm },
+      { name: ' Experience', forms: this.experienceForm },
+      { name: ' Project', forms: this.projectForm },
+      { name: ' Commendation', forms: this.commendationForm },
+      { name: ' Footer', forms: this.footerForm },
+    ];
+
+    return allForms.reduce((invalidFormNames: string[], formGroup) => {
+      const invalidFormsInGroup = formGroup.forms.filter((form) => !form.valid);
+      if (invalidFormsInGroup.length > 0) {
+        invalidFormNames.push(formGroup.name);
+      }
+      return invalidFormNames;
+    }, []);
+  }
+
   allFormsAreValid(): boolean {
-    return [
-      ...this.bioForm,
-      ...this.statsForm,
-      ...this.experienceForm,
-      ...this.projectForm,
-      ...this.commendationForm,
-      ...this.footerForm,
-    ].every((form) => form.valid);
+    return this.invalidForms().length === 0;
   }
 
   submit(): void {

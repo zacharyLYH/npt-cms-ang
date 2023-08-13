@@ -23,7 +23,6 @@ export class FooterComponent implements OnInit {
         links: this._formBuilder.array(
           (data.links || []).map((link: string) =>
             this._formBuilder.control(link, [
-              Validators.required,
               Validators.pattern(this.formActions.urlPattern),
             ])
           )

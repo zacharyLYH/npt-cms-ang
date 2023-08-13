@@ -21,18 +21,17 @@ export class ProjectComponent implements OnInit {
         name: [data.name, Validators.required],
         summary: [data.summary, Validators.required],
         story: [data.story, Validators.required],
-        dateStartToEnd: [data.dateStartToEnd, Validators.required],
-        current: [data.current],
-        featured: [data.featured],
+        dateStartToEnd: [data.dateStartToEnd],
+        current: [data.current, Validators.required],
+        featured: [data.featured, Validators.required],
         skills: this._formBuilder.array(
           (data.skills || []).map((skill: string) =>
-            this._formBuilder.control(skill, Validators.required)
+            this._formBuilder.control(skill)
           )
         ),
         links: this._formBuilder.array(
           (data.links || []).map((link: string) =>
             this._formBuilder.control(link, [
-              Validators.required,
               Validators.pattern(this.formActions.urlPattern),
             ])
           )
