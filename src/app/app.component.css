@@ -1,13 +1,25 @@
+body {
+  background-color: #d1a3ef; /* Off-white background color for the entire body */
+}
+
 .wrapper {
-  min-height: 100vh; /* Make sure the wrapper takes up at least the viewport height */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 .hero {
-  flex: 1; /* Allow the hero section to grow and take remaining space */
+  flex: 1;
   text-align: center;
   padding: 100px 0;
+}
+
+.hero-text {
+  font-family: "Poppins", sans-serif; /* Use the Poppins font for the text */
+  font-weight: 600; /* Use a slightly bold weight for emphasis */
+  font-size: 48px; /* Increase the font size */
+  color: #6d47d1; /* A playful color, but you can adjust based on preference */
+  margin-bottom: 20px;
 }
 
 .footer {
@@ -17,11 +29,6 @@
   text-align: center;
   padding: 20px;
   background-color: #f8f9fa;
-}
-
-.hero-text {
-  font-size: 32px;
-  margin-bottom: 20px;
 }
 
 .footer-text-muted {
