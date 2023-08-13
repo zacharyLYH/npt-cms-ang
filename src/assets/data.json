@@ -1,0 +1,146 @@
+[
+    {
+        "type": "Bio",
+        "name": "Zachary Lee",
+        "title": "Software Engineer; Full stack developer 🤓",
+        "socialLinks": [
+            "https://github.com/zacharyLYH",
+            "https://www.linkedin.com/in/zacharyleeyh",
+            "leeyihong03@gmail.com",
+            "https://leetcode.com/zacharylyh/"
+        ],
+        "tldr": "💻Ex SWE @ Spawnn; Ex Algorithms TA @ UB; 📚CS @ UB'23; ✅Self-starting; Nimble; Curious",
+        "aboutMe": "I am a fresh grad with an undergraduate degree in BS Computer Science with 9 months of professional Software Engineering experience. I am a natural leader; I have played key roles and led many projects during my internship, and I also tend to gravitate towards leadership/managerial roles in school and personal projects because people see me as a knowledgeable software engineer, a compassionate leader, a dependable team-player, and a result-driven individual. I am extremely passionate about learning; I believe learning is what makes a good life a great life, and what separates the best among the big talent pool.  I work hard; I usually have no problem being the first person to start a day’s work, and the last person to end the day, however, that doesn’t mean I don’t work smart – I work hard, smartly – and that has been the secret to all my career success.",
+        "image": "/headshot.jpeg",
+        "hobbies": [
+            "Golang, TypeScript, Python ",
+            "I love playing and watching CSGO 🔫",
+            "I love to cook 👨‍🍳",
+            "I am an avid reader. The genres I read are mostly on science, theory, and computer science 🔖",
+            "I prefer instrumental music 🎹"
+        ],
+        "jobStatus": "Interview Ready",
+        "docs": {
+            "resume": "/zachary_lee_resume.pdf",
+            "transcript": "/transcript.pdf"
+        }
+    },
+    {
+        "type": "Experience",
+        "title": "Software Engineer",
+        "summary": "Full stack MVP development of a video analysis SaSS platform.",
+        "skills": [
+            "nodejs",
+            "mongodb",
+            "github",
+            "nextjs",
+            "expressjs",
+            "tailwindcss",
+            "typescript"
+        ],
+        "story": " Collaborated closely with the CEO to establish more than 80% (18+ components) of the Backend architecture, concentrating on scalability and maintainability.Led development of an automated test tool, using JS testing frameworks and Python scripting, cutting testing time by 50%.Supervised integration of 20 approved API endpoints with Frontend team and troubleshooted blockers by developers. Coded more than 50% Backend code and facilitated 50+ code reviews in an Agile environment. Transitioned to Full Stack in 2 weeks and coded 10+ Frontend features using Next.JS and Typescript, contributing to 15% of Front-End codebase.Spearheaded company into delivering an Alpha release stage in 4 months, releasing to over 20+ professional collegiate gaming organizations; highly recognized for impact and effort in development and leadership.",
+        "orgName": "Spawnn",
+        "links": ["https://github.com/makeopensource/Classic-RPG"],
+        "dateStartEnd": "09/2022 - 05/2023",
+        "current": false
+    },
+    {
+        "type": "Experience",
+        "title": "Open source contributor",
+        "summary": "Contributed to an open source game engine",
+        "skills": ["python"],
+        "story": "Contributed new features and addressed issues at UB’s open-source club’s Python based Classic-RPG style game engine. Contributed core features such as Potions, and many classes such as Health and Speed.Learnt what it meant to develop a game engine and practiced Python3, Object-Oriented Paradigm programming, and GitHub skills.",
+        "links": ["https://github.com/makeopensource/Classic-RPG"],
+        "orgName": "MOS",
+        "dateStartEnd": "09/2022 - 05/2023",
+        "current": false
+    },
+    {
+        "type": "Project",
+        "name": "Creds",
+        "summary": "Full Stack secrets manager, built to solve environment variables sharing in a secure, scalabe, and user friendly manner.",
+        "skills": ["typescript", "nextjs", "tailwindcss", "prisma"],
+        "story": "Engineered a user friendly and secure secrets manager, designed to reduce pain points of sharing secrets in software. Achieved an average 93% score on Google Lighthouse on performance, accessibility, and SEO. Onboarded 120+ users and managing 1000+ individual secrets.",
+        "links": ["https://cred-nine.vercel.app/"],
+        "featured": true,
+        "current": true,
+        "dateStartToEnd": "Blank"
+    },
+    {
+        "type": "Project",
+        "name": "Drs-Appointment",
+        "summary": "Full Stack medical appointment portal, including features for making, updating, and deleting appointments, creating a medical profile, and making payments for services.",
+        "skills": ["typescript", "nextjs", "tailwindcss", "prisma"],
+        "story": "Consists of 3 entities - Patient, Appointment, Medical_History - handled via Prisma ORM and hosted on PlanetScale DB. Uses feature rich Shadcn.UI as a component library to provide responsive and robust UI components such as Tables and Forms. Attained a 93% average score for performance and SEO on Google Lighthouse.",
+        "links": ["https://github.com/zacharyLYH/doctors-appoinment"],
+        "current": true,
+        "featured": true,
+        "dateStartToEnd": "Blank"
+    },
+    {
+        "type": "Project",
+        "name": "E-Commerce CMS",
+        "summary": "Full Stack CMS including an admin system and a client frontend. Designed to be responsive first and feature rich.",
+        "skills": ["typescript", "nextjs", "tailwindcss", "prisma"],
+        "story": "E-Commerce Admin side CMS includes features like Products and it's various features, and switching stores. E-Commerce Admin uses Clerk Auth service as authentication service, and Shadcn.UI as a component library. Client side CMS includes rich UI for viewing, ordering, and purchasing products. Stripe API integration as a payment system, Prisma as ORM, and PlanetScale as DB.",
+        "links": [
+            "https://github.com/zacharyLYH/cms-admin",
+            "https://github.com/zacharyLYH/cms-store"
+        ],
+        "featured": true,
+        "current": false,
+        "dateStartToEnd": "Blank"
+    },
+    {
+        "type": "Project",
+        "name": "Design Patterns in TypeScript",
+        "summary": "Practical projects demonstrating various design patterns, written in TypeScript..",
+        "skills": ["typescript", "education"],
+        "story": "A learning haven for Object Oriented Design Patterns in Typescript. Follows the book Head First Design Patterns with code examples from the code demonstrated in Typescript. Contains at least 1 fresh idea for every design pattern covered in the book. Including an auctioning system for the Observer Pattern and an implementation of a Text Editor Settings tab using the Strategy Pattern. ",
+        "links": [
+            "https://github.com/zacharyLYH/design-patterns-in-typescript"
+        ],
+        "current": false,
+        "featured": true,
+        "dateStartToEnd": "Blank"
+    },
+    {
+        "type": "Footer",
+        "author": "Zachary Lee",
+        "links": ["https://github.com/zacharyLYH"]
+    },
+    {
+        "type": "Commendation",
+        "name": "Anthony Mendez",
+        "compliment": "Analytical and time management guru. As we prepare for our technical interviews, Zachary shows his exemplary analytical skills by finding patterns to solve complex problems.Having worked on projects together he ships high quality code quickly. You won't go wrong with this choice.",
+        "image": "/amendez.jpeg",
+        "credentials": "Software Engineer @ CapitalOne",
+        "link": "https://www.linkedin.com/in/anthony00/"
+    },
+    {
+        "type": "Commendation",
+        "name": "Will Hollingsworth",
+        "compliment": "I am delighted to recommend Zachary for any technical role. Zachary consistently demonstrated exceptional work ethic and technical expertise. Zachary is very thoughtful and knowledgeable in scalability and maintainability. From a managerial perspective, Zachary was a joy to work with. Zachary consistently exceeded expectations and demonstrated excellent communication skills, strategic thinking, and accountability. I have no doubt that Zachary will be an asset to any team.",
+        "credentials": "COO @ Spawnn",
+        "image": "/willhollingsworth.jpeg",
+        "link": "https://www.linkedin.com/in/will-hollingsworth-01284316a/"
+    },
+    {
+        "type": "Stats",
+        "title": "BSc Computer Science",
+        "value": "University at Buffalo",
+        "description": "3.7 / 4.0 GPA, Graduated May 2023"
+    },
+    {
+        "type": "Stats",
+        "title": "Projects Founded",
+        "value": "12",
+        "description": "Creds, NoSequel DB, Design Patterns, etc.."
+    },
+    {
+        "type": "Stats",
+        "title": "Years of Professional Experience",
+        "value": "<1 years",
+        "description": "9 months as a founding Full Stack Engineer at a seed stage startup."
+    }
+]
