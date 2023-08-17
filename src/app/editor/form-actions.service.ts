@@ -76,7 +76,7 @@ export class FormActionsService {
           featured: [false],
           summary: ['', Validators.required],
           story: ['', Validators.required],
-          dateStartEnd: [''],
+          dateStartToEnd: [''],
           skills: this._formBuilder.array([]),
           links: this._formBuilder.array(
             [],
@@ -184,6 +184,12 @@ export class FormActionsService {
     a.download = 'Renderfile.json';
     a.click();
     window.URL.revokeObjectURL(url);
+    this.bioForm = [];
+    this.statsForm = [];
+    this.commendationForm = [];
+    this.footerForm = [];
+    this.projectForm = [];
+    this.experienceForm = [];
     this.router.navigate(['/']);
   }
 }
